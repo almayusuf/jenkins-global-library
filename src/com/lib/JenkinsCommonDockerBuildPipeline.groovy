@@ -110,7 +110,7 @@ def runPipeline() {
           stage('Push image') {
 
 
-            withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "nexus-docker-creds1", usernameVariable: 'docker_username', passwordVariable: 'docker_password']]) {
+            withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: "nexus-docker-creds2", usernameVariable: 'docker_username', passwordVariable: 'docker_password']]) {
               sh """#!/bin/bash -e
               until docker login --username ${env.docker_username} --password ${env.docker_password} https://docker.alisait.net
               do
