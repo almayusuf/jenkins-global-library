@@ -29,8 +29,8 @@ def runPipeline() {
     break
 
     default:
-        currentBuild.result = 'FAILURE'
-        print('This branch does not supported')
+        environment = 'test'
+        print('This deployment will got to test environment')
   }
 
   println("Branch: ${branch}")
